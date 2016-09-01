@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="angular.js"></script>
+<script>
+	var myapp=angular.module('myapp',[]);
+	myapp.controller('mycontroller',function($scope){	
+			var Employee = {Name:"Archana",Id:"23",Designation:"Developer"};
+			$scope.Employee = Employee;
+		})
+</script>
+</head>
+<body ng-app="myapp">
+<div ng-controller="mycontroller">
+<input type="text" ng-model="Employee.Name"/><br/>
+<input type="text" ng-model="Employee.Id"/><br/>
+<input type="text" ng-model="Employee.Designation"/><br/>
+<hr>
+<h3 align="center"> ng-bind used to view data in table</h3>
+<hr>
+<table style="border:1px solid #dcdcdc;">
+	<thead>
+		<th> EmployeeName</th>
+		<th> EmployeeId</th>
+		<th> Designation</th>
+		
+	</thead>
+	<tr>
+		<td ng-bind="Employee.Name">{{Name}}</td>
+		<td ng-bind="Employee.Id">{{Id}}</td>
+		<td ng-bind="Employee.Designation">{{Designation}}</td>
+		
+	</tr>
+</table>
+</div>
+</body>
+</html>

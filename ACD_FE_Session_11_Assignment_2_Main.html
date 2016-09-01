@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="angular.js"></script>
+<script>
+	var myapp=angular.module('myapp',[]);
+	myapp.controller('mycontroller',function($scope){
+			var Employee={Name:"Archana",Id:23,Designation:"Developer"};
+				$scope.Employee	= Employee;
+				$scope.submit = function(){
+					alert('Added ' + Employee.Name);
+					}
+
+			})
+
+</script>
+</head>
+<body ng-app="myapp">
+<div ng-controller="mycontroller">
+<input type="text" ng-model="Employee.Name"/><br/>
+<input type="text" ng-model="Employee.Id"/><br/>
+<input type="text" ng-model="Employee.Designation"/><br/>
+<br/>
+<br/>
+<table style="border:1px solid #dcdcdc;">
+	<thead>
+		<th> EmployeeName</th>
+		<th> EmployeeId</th>
+		<th> Designation</th>
+		<th> Add</th>
+	</thead>
+	<tr>
+		<td>{{Employee.Name}}</td>
+		<td>{{Employee.Id}}</td>
+		<td>{{Employee.Designation}}</td>
+		<td><button ng-dblclick= "submit()"> Click here for details</button></td>
+	</tr>
+</table>
+</div>
+</body>
+</html>
